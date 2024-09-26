@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() {
+    int arr[] = {1, 2, 2, 3, 4, 4, 5};
+    int len = sizeof(arr) / sizeof(arr[0]);
+    int temp[len];
+    int tempIndex = 0;
+    for (int i = 0; i < len; i++) {
+        int dup = 0;
+        for (int j = 0; j < tempIndex; j++) {
+            if (arr[i] == temp[j]) {
+                dup = dup + 1;
+                break;
+            }
+        }
+        if (dup < 1) {
+            temp[tempIndex] = arr[i];
+            tempIndex++;
+        }
+    }
+    for (int i = 0; i < tempIndex; i++) {
+        printf("%d ", temp[i]);
+    }
+}

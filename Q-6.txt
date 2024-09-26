@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+void checklogin(const char *username, const char *password) {
+    const char *correctUsername = "admin";
+    const char *correctPassword = "1234";
+
+    if (strcmp(username, correctUsername) == 0 && strcmp(password, correctPassword) == 0) {
+        printf("Login successful");
+    } else {
+        printf("Login failed");
+    }
+}
+
+int main() {
+    char username[20];
+    char password[20];
+    printf("Enter username : ");
+    scanf("%s", username);
+    printf("Enter password : ");
+    scanf("%s", password);
+    checklogin(username, password);
+}

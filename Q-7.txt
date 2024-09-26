@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+void checktraffic(const char *lightcolor){
+    const char *str1 = "red";
+    const char *str2 = "yellow";
+    const char *str3 = "green";
+    
+    if(strcmp(lightcolor, str1) == 0){
+        printf("STOP");
+    }
+    else if(strcmp(lightcolor, str2) == 0){
+        printf("SLOW DOWN");
+    }
+    else if(strcmp(lightcolor, str3) == 0){
+        printf("GO");
+    }
+    else{
+        printf("not valid light color");
+    }
+}
+
+int main(){
+    char lightcolor[10];
+    printf("Enter current light color : ");
+    scanf("%s", &lightcolor);
+    checktraffic(lightcolor);
+}
