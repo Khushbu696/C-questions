@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+   int arr[] = {10, 20, 30, 40, 50};
+   int len = sizeof(arr)/sizeof(arr[0]);
+   
+   int first = arr[0];
+   int last = arr[len-1];
+   
+   printf("first element is %d\n", first);
+   printf("last element is %d\n", last);
+    return 0;
+}

@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+void splitString(char *input) {
+    char word[100];
+    int index = 0;
+    printf("Output:\n");
+    for (int i = 0; input[i] != '\0'; i++) {
+// If the character is a letter or digit, store it in the word array
+        if (isalnum(input[i])) {
+            word[index++] = input[i];
+        } 
+// If the character is a space or punctuation, process the word if we have any
+        else if (index > 0) {
+            word[index] = '\0';  // Null-terminate the word
+            printf("'%s'\n", word);  // Print the word
+            index = 0;  // Reset index for the next word
+        }
+    }
+// If there's any remaining word, print it (handles the last word case)
+    if (index > 0) {
+        word[index] = '\0';
+        printf("'%s'\n", word);
+    }
+}
+int main() {
+    char inputString[200] = "Hello world, welcome to JavaScript!";
+    splitString(inputString);
+
+    return 0;
+}
