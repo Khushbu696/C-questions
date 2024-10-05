@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+char check(char str[], char ch){
+    int len = strlen(str);
+    
+    if(str[len-1]==ch){
+        printf("true");
+    }
+    else{
+        printf("false");
+    }
+}
+int main(){
+    char str[100];
+    char ch;
+     printf("Enter the string: ");
+    scanf("%s", str);
+    printf("Enter the character to check: ");
+    scanf(" %c", &ch);
+    check(str, ch);
+}

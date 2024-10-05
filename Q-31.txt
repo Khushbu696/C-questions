@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+
+void repeat(char *str, int num){
+    for(int i=1; i<=num; i++){
+        printf("%s\n", str);
+    }
+}
+
+int main(){
+  char str[50];
+  int num;
+  
+  printf("Enter a string : ");
+  scanf("%s", &str);
+  printf("Enter number of times to repeat : ");
+  scanf("%d", &num);
+  repeat(str, num);
+}
